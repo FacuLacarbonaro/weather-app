@@ -1,13 +1,21 @@
 import React from "react";
+import { useState } from "react";
 
 import "./Sidebar.scss";
 
 const Sidebar = (props) => {
+  const [search, setSearch] = useState("");
+
   return (
     <div className="sidebar">
       <div className="sidebar__container">
         <div className="sidebar__container__locations">
-          <input type="text" placeholder="Another location" />
+          <input
+            type="text"
+            placeholder="Another location"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
           <hr />
           <div className="sidebar__container__locations__others">
             <ul>
